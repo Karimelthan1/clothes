@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+        *{
+            margin: 0;
+        }
+        header{
+            background-color: #ccc;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 50px;
+            height: 150px;
+            line-height: 150px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        h2{
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 50px;
+            margin: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight:lighter ;
+        }
+        .img{
+            position: relative;
+            height: 300px;
+        }
+        .img img{
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: -300%;
+            height: 100%;
+            animation: moving 10s infinite ease-in-out forwards;
+        }
+        .img img:first-of-type{
+            z-index: 2;
+        }
+        .img img:last-of-type{
+            z-index: 1;
+            animation-delay: 5s;
+        }
+        input{
+            width: 200px;
+            height: 40px;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .flex div{
+            margin-right: 40px;
+            visibility: hidden;
+        }
+        select{
+            height: 40px;
+            font-size: 25px;
+        }
+        label{
+            display: block;
+            text-transform: capitalize;
+            font-size: 30px;
+        }
+        .result{
+            position: absolute;
+            background-color: #ddd;
+            left: 30%;
+            top: -300%;
+            width: 450px;
+            height: 200px;
+            border-radius: 30px;
+            margin: 20px auto;
+        }
+        .result div{
+            width: 80%;
+            height: 30%;
+            text-align: center;
+            font-size: 30px;
+        }
+        input[type="submit"]{
+            font-size: 30px;
+            height: 50px;
+            margin-left: 40px;
+        }
+        button{
+            display: block;
+            margin: 10px auto;
+            font-size: 50px;
+            visibility: hidden;
+        }
+        @keyframes moving {
+           0%{
+            left: -300%;
+           } 
+           50%{
+            left: 0;
+           } 
+           100%{
+            left: 300%;
+           } 
+        }
+    </style>
+</head>
+<body>
+    <header>brand clothees</header>
+    <h2>choose your brand</h2>
+    <div class="img" id="div">
+        <img src="images/بدلة-رجالية-أنيقة-سوداء-مزدوجة-الصدر-م.jpg" alt="">
+        <img src="images/41d13jB9v6L._AC_SY780_.jpg" alt="">
+    </div>
+    <div class="flex">
+        <div id="one">
+            <label for="">suit</label>
+            <input type="text" name="amount" form="myform"  placeholder="Enter Your Amount" id="val1" required>
+            <select  id="suit">
+                <option value="600">gray</option>
+                <option value="650">blue black</option>
+                <option value="750">black</option>
+            </select>
+        </div><!-- one -->
+        <div id="two">
+            <label for="">shoes</label>
+            <input type="text" name="amount" form="myform"  placeholder="Enter Your Amount" id="val2" required>
+            <select  id="shoes">
+                <option value="200">brown</option>
+                <option value="400">camel</option>
+                <option value="500">black</option>
+            </select>
+        </div><!-- two -->
+    </div><!-- flex -->
+    <button>calculate</button>
+    <div class="result" id="res">
+        <div></div>
+        <form action="order.html"  >
+            <input type="submit" value="send" >
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
